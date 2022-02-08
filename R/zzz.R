@@ -19,7 +19,7 @@
     packageStartupMessage("upgrading pip...")
     reticulate::virtualenv_install(
       envname = pkgname,
-      "pip",
+      c("pip", "setuptools"),
       pip_options = "--upgrade"
     )
     # install daphniaruler dependencies
