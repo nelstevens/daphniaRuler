@@ -4,6 +4,7 @@
 #' @param path path to image either absolute or relative
 #' @param method what method of measurement to use either eye or head
 #'
+measure_image <- NULL
 # measure_image <- function(
 #   path = system.file(
 #     "python/The-Daphnia-ruler/tests/test_dirs/test_images/sample1.JPG",
