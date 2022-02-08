@@ -15,8 +15,15 @@
     packageStartupMessage("Creating conda environment 'daphniaRuler'")
     # create virtual env
     reticulate::conda_create(envname = pkgname, python_version = "3.6")
-    # install daphniaruler
-    packageStartupMessage("installing daphniaruler python package")
+    # upgrade pip
+    packageStartupMessage("upgrading pip...")
+    reticulate::virtualenv_install(
+      envname = pkgname,
+      "pip",
+      pip_options = "--upgrade"
+    )
+    # install daphniaruler dependencies
+    packageStartupMessage("installing daphniaruler python dependencies...")
     reticulate::virtualenv_install(
       envname = pkgname,
       packages = c(
@@ -54,6 +61,7 @@
         "wrapt==1.11.2"
       )
     )
+    packageStartupMessage("installing daphniaruler...")
     reticulate::virtualenv_install(
       envname = pkgname,
       packages = "daphruler==0.3.1",
