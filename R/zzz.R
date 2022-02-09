@@ -24,7 +24,7 @@
     )
     # install daphniaruler dependencies
     packageStartupMessage("installing daphniaruler python dependencies...")
-    reticulate::virtualenv_install(
+    reticulate::conda_install(
       envname = pkgname,
       packages = c(
         "astroid==2.3.3",
