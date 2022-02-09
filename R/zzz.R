@@ -60,8 +60,7 @@
         "tqdm==4.40.2",
         "typed-ast==1.4.0",
         "wrapt==1.11.2"
-      ),
-      ignore_installed = TRUE
+      )
     )
     packageStartupMessage("installing daphniaruler...")
     reticulate::virtualenv_install(
