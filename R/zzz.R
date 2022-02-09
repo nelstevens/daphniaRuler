@@ -14,7 +14,7 @@
   if (!pkgname %in% exi$name) {
     packageStartupMessage("Creating conda environment 'daphniaRuler'")
     # create virtual env
-    reticulate::conda_create(envname = pkgname, python_version = "3.6")
+    reticulate::conda_create(envname = pkgname, python_version = "3.6.13")
     # upgrade pip
     packageStartupMessage("upgrading pip...")
     reticulate::virtualenv_install(
@@ -22,6 +22,7 @@
       c("pip", "setuptools"),
       pip_options = "--upgrade"
     )
+
     # install daphniaruler dependencies
     packageStartupMessage("installing daphniaruler python dependencies...")
     reticulate::virtualenv_install(
