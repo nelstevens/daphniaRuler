@@ -2,12 +2,12 @@
   packageStartupMessage("Trying to find python...")
   # try finding and using installed python
   pythonpath <- reticulate::py_discover_config()
-  tryCatch({
-    reticulate::use_python(pythonpath$python)
-  },
-  error = function(mgs) {
-    stop("No usable python installation found. please install python that reticulate can acess. Maybe reticualte::install_miniconda() will work.")
-  })
+  # tryCatch({
+  #   reticulate::use_python(pythonpath$python)
+  # },
+  # error = function(mgs) {
+  #   stop("No usable python installation found. please install python that reticulate can acess. Maybe reticualte::install_miniconda() will work.")
+  # })
   packageStartupMessage("Trying to find conda environment 'daphniaRuler'")
   # check if conda environment exists
   exi <- reticulate::conda_list()
@@ -17,16 +17,18 @@
     reticulate::conda_create(envname = pkgname, python_version = "3.6.13")
     # upgrade pip
     packageStartupMessage("upgrading pip...")
-    reticulate::virtualenv_install(
+    reticulate::conda_install(
       envname = pkgname,
+      pip = TRUE,
       c("pip", "setuptools"),
       pip_options = "--upgrade"
     )
 
     # install daphniaruler dependencies
     packageStartupMessage("installing daphniaruler python dependencies...")
-    reticulate::virtualenv_install(
+    reticulate::conda_install(
       envname = pkgname,
+      pip = TRUE,
       packages = c(
         "astroid==2.3.3",
         "attrs==21.2.0",
@@ -63,16 +65,17 @@
       )
     )
     packageStartupMessage("installing daphniaruler...")
-    reticulate::virtualenv_install(
+    reticulate::conda_install(
       envname = pkgname,
-      packages = "daphruler==0.3.1",
+      pip = TRUE,
+      packages = "daphruler==0.3.2",
       pip_options = "-i https://test.pypi.org/simple/"
     )
     packageStartupMessage("Activating conda environment 'daphniaRuler'")
-    reticulate::use_condaenv(pkgname)
+    reticulate::use_condaenv(pkgname, required = TRUE)
   } else {
     packageStartupMessage("Activating conda environment 'daphniaRuler'")
-    reticulate::use_condaenv(pkgname)
+    reticulate::use_condaenv(pkgname, required = TRUE)
   }
   packageStartupMessage("done... have fun")
 }
