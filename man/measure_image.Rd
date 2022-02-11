@@ -4,7 +4,16 @@
 \alias{measure_image}
 \title{Measure morphometric traits of a single image}
 \usage{
-measure_image()
+measure_image(
+  path = system.file("inst/sample_images/cam1_05135_2018-10-21_09-36-20.JPG", package =
+    "dphrl"),
+  method = "eye"
+)
+}
+\arguments{
+\item{path}{path to image either absolute or relative}
+
+\item{method}{what method of measurement to use either eye or head}
 }
 \description{
 Measure morphometric traits of a single image
