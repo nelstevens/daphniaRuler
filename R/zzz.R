@@ -12,7 +12,7 @@
   # check if conda environment exists
   exi <- reticulate::conda_list()
   if (!pkgname %in% exi$name) {
-    packageStartupMessage("Creating conda environment 'daphniaRuler'")
+    packageStartupMessage(sprintf("Creating conda environment '%s'", pkgname))
     # create virtual env
     reticulate::conda_create(envname = pkgname, python_version = "3.6.13")
     # upgrade pip
@@ -71,10 +71,20 @@
       packages = "daphruler==0.3.3",
       pip_options = "-i https://test.pypi.org/simple/"
     )
-    packageStartupMessage("Activating conda environment 'daphniaRuler'")
+    packageStartupMessage(sprintf("Activating conda environment '%s'", pkgname))
+    # find path to conda env python
+    condals <- reticulate::conda_list()
+    pyPath <- condals[condals$name == pkgname, "python"]
+    # set reticulate python to patj
+    Sys.setenv(RETICULATE_PYTHON=pyPath)
     reticulate::use_condaenv(pkgname, required = TRUE)
   } else {
-    packageStartupMessage("Activating conda environment 'daphniaRuler'")
+    packageStartupMessage(sprintf("Activating conda environment '%s'", pkgname))
+    # find path to conda env python
+    condals <- reticulate::conda_list()
+    pyPath <- condals[condals$name == pkgname, "python"]
+    # set reticulate python to patj
+    Sys.setenv(RETICULATE_PYTHON=pyPath)
     reticulate::use_condaenv(pkgname, required = TRUE)
   }
   packageStartupMessage("done... have fun")
