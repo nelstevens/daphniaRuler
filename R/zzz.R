@@ -68,7 +68,7 @@
     reticulate::conda_install(
       envname = pkgname,
       pip = TRUE,
-      packages = "daphruler==0.3.2",
+      packages = "daphruler==0.3.3",
       pip_options = "-i https://test.pypi.org/simple/"
     )
     packageStartupMessage("Activating conda environment 'daphniaRuler'")
