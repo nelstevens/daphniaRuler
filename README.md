@@ -3,6 +3,7 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/nelstevens/daphniaRuler/workflows/R-CMD-check/badge.svg)](https://github.com/nelstevens/daphniaRuler/actions)
+[![Codecov test coverage](https://codecov.io/gh/nelstevens/daphniaRuler/branch/main/graph/badge.svg)](https://codecov.io/gh/nelstevens/daphniaRuler?branch=main)
 <!-- badges: end -->
 
 The goal of dphrl is to ...
