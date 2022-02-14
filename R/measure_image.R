@@ -50,10 +50,10 @@ pltimg <- function(arr) {
   plot.new()
   rasterImage(
     nor,
-    xleft = 0,
-    xright = 1,
-    ybottom = 1,
-    ytop = 0
+    xleft = 1,
+    xright = 0,
+    ybottom = 0,
+    ytop = 1
   )
 }
 
