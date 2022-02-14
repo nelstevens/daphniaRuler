@@ -2,7 +2,8 @@
 #'
 #' @import reticulate
 #' @param path path to image either absolute or relative
-#' @param method try to find eye of daphnia? boolean
+#' @param find_eye try to find eye of daphnia? boolean
+#' @param plot_image whether or not to plot resulting image. boolean
 #'
 measure_image <- function(
   path = system.file(

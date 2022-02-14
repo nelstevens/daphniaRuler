@@ -5,15 +5,17 @@
 \title{Measure morphometric traits of a single image}
 \usage{
 measure_image(
-  path = system.file("inst/sample_images/cam1_05135_2018-10-21_09-36-20.JPG", package =
-    "dphrl"),
-  method = "eye"
+  path = system.file("inst/sample_images/example1.JPG", package = "dphrl"),
+  find_eye = TRUE,
+  plot_image = TRUE
 )
 }
 \arguments{
 \item{path}{path to image either absolute or relative}
 
-\item{method}{what method of measurement to use either eye or head}
+\item{find_eye}{try to find eye of daphnia? boolean}
+
+\item{plot_image}{whether or not to plot resulting image. boolean}
 }
 \description{
 Measure morphometric traits of a single image
