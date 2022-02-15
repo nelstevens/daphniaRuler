@@ -2,4 +2,4 @@
 test_data <- list()
 test_data[["test_arra"]] <- measure_image()$image
 
-usethis::use_data(test_data, overwrite = TRUE)
+usethis::use_data(test_data, overwrite = TRUE, internal = TRUE)
