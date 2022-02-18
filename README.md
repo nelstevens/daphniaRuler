@@ -6,22 +6,26 @@
 [![Codecov test coverage](https://codecov.io/gh/nelstevens/daphniaRuler/branch/main/graph/badge.svg)](https://codecov.io/gh/nelstevens/daphniaRuler?branch=main)
 <!-- badges: end -->
 
-The goal of dphrl is to ...
+Automatically collect morphometric traits of Daphnia and other zooplankton species by leveraging reticulate. Simply take images of individual specimen and point the daphniaruler towards a single image or a directory of images.
 
 ## Installation
 
-You can install the released version of dphrl from [CRAN](https://CRAN.R-project.org) with:
+You can install the daphnia ruler via github using remotes:
 
 ``` r
-install.packages("dphrl")
+remotes::install_github("nelstevens/daphniaRuler")
 ```
 
-## Example
+## Usage
+For detailed usage see: tbd
 
-This is a basic example which shows you how to solve a common problem:
+Measure single images:
 
 ``` r
 library(dphrl)
-## basic example code
+measure_image("path/to/image")
 ```
+The daphniaruler will output a list with all measured traits and plot measurements over the image.
+![](man/figures/example1_out.png)
 
+Measure a directory: tbd
