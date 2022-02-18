@@ -19,7 +19,7 @@ remotes::install_github("nelstevens/daphniaRuler")
 ## Usage
 For detailed usage see: tbd
 
-Measure single images:
+### Measure single images:
 
 ``` r
 library(dphrl)
@@ -28,4 +28,4 @@ measure_image("path/to/image")
 The daphniaruler will output a list with all measured traits and plot measurements over the image.
 ![](man/figures/example1_out.png)
 
-Measure a directory: tbd
+### Measure a directory: tbd
