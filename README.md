@@ -6,7 +6,7 @@
 [![Codecov test coverage](https://codecov.io/gh/nelstevens/daphniaRuler/branch/main/graph/badge.svg)](https://codecov.io/gh/nelstevens/daphniaRuler?branch=main)
 <!-- badges: end -->
 
-Automatically collect morphometric traits of Daphnia and other zooplankton species by leveraging reticulate. Simply take images of individual specimen and point the daphniaruler towards a single image or a directory of images.
+Automatically collect morphometric traits of Daphnia and other zooplankton species by leveraging python. Simply take images of individual specimen and point the daphniaruler towards a single image or a directory of images.
 
 ## Installation
 
