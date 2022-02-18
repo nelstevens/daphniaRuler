@@ -16,7 +16,6 @@ test_that("ospath works", {
 })
 
 test_that("measure_image works", {
-  corrpath <- "../../inst/sample_images/example1.JPG"
   # inexistent path leads to error
   expect_error(measure_image("/some/wrong/path"))
   # find eye must be logical
