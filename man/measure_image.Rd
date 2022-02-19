@@ -5,7 +5,7 @@
 \title{Measure morphometric traits of a single image}
 \usage{
 measure_image(
-  path = system.file("inst/sample_images/example1.JPG", package = "dphrl"),
+  path = system.file("inst/sample_images/example1.JPG", package = "daphniaruler"),
   find_eye = TRUE,
   plot_image = TRUE
 )

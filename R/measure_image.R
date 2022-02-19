@@ -8,7 +8,7 @@
 measure_image <- function(
   path = system.file(
     "inst/sample_images/example1.JPG",
-    package = "dphrl"
+    package = "daphniaruler"
     ),
   find_eye = TRUE,
   plot_image = TRUE

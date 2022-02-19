@@ -1,4 +1,4 @@
 library(testthat)
-library(dphrl)
+library(daphniaruler)
 
-test_check("dphrl")
+test_check("daphniaruler")

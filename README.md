@@ -22,7 +22,7 @@ For detailed usage see: tbd
 ### Measure single images:
 
 ``` r
-library(dphrl)
+library(daphniaruler)
 measure_image("path/to/image")
 ```
 The daphniaruler will output a list with all measured traits and plot measurements over the image.
