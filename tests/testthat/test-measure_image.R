@@ -28,7 +28,7 @@ test_that("measure_image works", {
   expect_type(measure_image(corrpath), "list")
   expect_type(measure_image(corrpath, find_eye = FALSE), "list")
   # snapshot test
-  expect_snapshot(measure_image(corrpath, plot_image = FALSE))
-  expect_snapshot(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE))
+  expect_snapshot_value(measure_image(corrpath, plot_image = FALSE), tolerance = 1)
+  expect_snapshot_value(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE), tolerance = 1)
 
 })
