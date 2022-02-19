@@ -1,5 +1,5 @@
 
-# dphrl
+# daphniaruler
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/nelstevens/daphniaRuler/workflows/R-CMD-check/badge.svg)](https://github.com/nelstevens/daphniaRuler/actions)
