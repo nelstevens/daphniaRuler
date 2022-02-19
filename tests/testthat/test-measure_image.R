@@ -15,15 +15,15 @@ test_that("ospath works", {
   }
 })
 
-# test_that("measure_image works", {
-#   # inexistent path leads to error
-#   expect_error(measure_image("/some/wrong/path"))
-#   # find eye must be logical
-#   expect_error(measure_image(corrpath, find_eye = "no"))
-#   expect_error(measure_image(corrpath, find_eye = 2))
-#   # plot image must be logical
-#   expect_error(measure_image(corrpath, plot_image = "no"))
-#   expect_error(measure_image(corrpath, plot_image = 2))
-#   # outputs a list
-#   expect_type(measure_image(corrpath), "list")
-# })
+test_that("measure_image works", {
+  # inexistent path leads to error
+  expect_error(measure_image("/some/wrong/path"))
+  # find eye must be logical
+  expect_error(measure_image(corrpath, find_eye = "no"))
+  expect_error(measure_image(corrpath, find_eye = 2))
+  # plot image must be logical
+  expect_error(measure_image(corrpath, plot_image = "no"))
+  expect_error(measure_image(corrpath, plot_image = 2))
+  # outputs a list
+  expect_type(measure_image(corrpath), "list")
+})
