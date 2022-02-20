@@ -28,7 +28,7 @@ test_that("measure_image works", {
   expect_type(measure_image(corrpath), "list")
   expect_type(measure_image(corrpath, find_eye = FALSE), "list")
   # snapshot test
-  expect_snapshot_value(measure_image(corrpath, plot_image = FALSE), style = "serialize", tolerance = 0.1)
-  expect_snapshot_value(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE), style = "serialize", tolerance = 0.1)
+  expect_snapshot(measure_image(corrpath, plot_image = FALSE), variant = Sys.info()[["sysname"]])
+  expect_snapshot(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE), variant = Sys.info()[["sysname"]])
 
 })
