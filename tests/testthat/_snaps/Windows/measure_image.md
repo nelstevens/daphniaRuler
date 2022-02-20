@@ -19808,11 +19808,7 @@
 ---
 
     Code
-      measure_image(corrpath_head, plot_image = FALSE)
-    Warning <simpleWarning>
-      eye method failed with: Error in py_call_impl(callable, dots$args, dots$keywords): IndexError: list index out of range
-       
-       using head_method instead
+      suppressWarnings(measure_image(corrpath_head, plot_image = FALSE))
     Output
       $ID
       [1] "sample_images\\example_head.JPG"

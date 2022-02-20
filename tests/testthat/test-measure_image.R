@@ -28,7 +28,7 @@ test_that("measure_image works", {
   expect_type(measure_image(corrpath), "list")
   expect_type(measure_image(corrpath, find_eye = FALSE), "list")
 
-  expect_type(measure_image(corrpath_head), "list")
+  expect_type(suppressWarnings(measure_image(corrpath_head)), "list")
   expect_type(measure_image(corrpath_head, find_eye = FALSE), "list")
 
   # expect warning on fall back to head_method
@@ -38,7 +38,7 @@ test_that("measure_image works", {
   expect_snapshot(measure_image(corrpath, plot_image = FALSE), variant = Sys.info()[["sysname"]])
   expect_snapshot(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE), variant = Sys.info()[["sysname"]])
 
-  expect_snapshot(measure_image(corrpath_head, plot_image = FALSE), variant = Sys.info()[["sysname"]])
+  expect_snapshot(suppressWarnings(measure_image(corrpath_head, plot_image = FALSE)), variant = Sys.info()[["sysname"]])
   expect_snapshot(measure_image(corrpath_head, plot_image = FALSE, find_eye = FALSE), variant = Sys.info()[["sysname"]])
 
 })
