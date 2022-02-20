@@ -13,10 +13,17 @@ measure_image(
 \arguments{
 \item{path}{path to image either absolute or relative}
 
-\item{find_eye}{try to find eye of daphnia? boolean}
+\item{find_eye}{try to find eye of daphnia?
+if eye can't be found automatically falls back to only outline measurement. boolean}
 
 \item{plot_image}{whether or not to plot resulting image. boolean}
 }
 \description{
 Measure morphometric traits of a single image
+}
+\examples{
+\dontrun{
+measure_image("path/to/image")
+}
+
 }
