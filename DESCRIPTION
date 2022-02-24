@@ -1,11 +1,12 @@
 Package: daphniaruler
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Measure morphometric traits of zooplankton from images.
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Nelson Stevens
+Maintainer: Nelson stevens <nelson.stevens92@gmail.com>
+Description: This package automatically measures body size, tail length, 
+    tail angle from daohnia or other zooplankton species. For daphnia it's also
+    possible to detect the eye enabling a more precise measurement of body size.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
