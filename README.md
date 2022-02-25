@@ -17,7 +17,7 @@ remotes::install_github("nelstevens/daphniaRuler")
 ```
 
 ## Usage
-For detailed usage see: tbd
+For detailed usage see: https://nelstevens.github.io/daphniaRuler/
 
 ### Measure single images:
 
