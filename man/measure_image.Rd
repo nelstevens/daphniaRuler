@@ -25,5 +25,4 @@ Measure morphometric traits of a single image
 \dontrun{
 measure_image("path/to/image")
 }
-
 }
