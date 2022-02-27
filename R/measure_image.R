@@ -71,8 +71,16 @@ measure_image <- function(
 #' plot image array
 #'
 #' @noRd
-pltimg <- function(arr) {
+pltimg <- function(arr, save = FALSE, path = NULL) {
   nor <- arr / 256
+  if (save) {
+    png(
+      path,
+      width = dim(nor)[2],
+      height = dim(nor)[1]
+      )
+  }
+  par(mar = c(0,0,0,0), xaxs="i", yaxs="i")
   plot.new()
   rasterImage(
     nor,
@@ -81,6 +89,9 @@ pltimg <- function(arr) {
     ybottom = 0,
     ytop = 1
   )
+  if (save) {
+    dev.off()
+  }
 }
 
 
