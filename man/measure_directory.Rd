@@ -6,11 +6,16 @@
 \usage{
 measure_directory(
   path = "C:/Users/Nelson/Desktop/test_dr/test_images",
-  write_images = TRUE
+  write_images = TRUE,
+  eye_method = TRUE
 )
 }
 \arguments{
 \item{path}{path to directory}
+
+\item{write_images}{write images to png? boolean}
+
+\item{eye_method}{use eye method when possible? boolean}
 }
 \description{
 measure all images in a directory

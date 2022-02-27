@@ -2,7 +2,10 @@
 #'
 #' @import purrr
 #' @import stringr
+#' @export
 #' @param path path to directory
+#' @param write_images write images to png? boolean
+#' @param eye_method use eye method when possible? boolean
 #'
 measure_directory <- function(
   path = "C:/Users/Nelson/Desktop/test_dr/test_images",

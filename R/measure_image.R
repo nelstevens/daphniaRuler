@@ -70,6 +70,9 @@ measure_image <- function(
 
 #' plot image array
 #'
+#' @importFrom grDevices dev.off png
+#' @importFrom graphics par plot.new rasterImage
+#'
 #' @noRd
 pltimg <- function(arr, save = FALSE, path = NULL) {
   nor <- arr / 256
