@@ -1,6 +1,6 @@
 Package: daphniaruler
 Type: Package
-Title: Measure morphometric traits of zooplankton from images.
+Title: Measure morphometric traits of zooplankton from images
 Version: 0.1.0
 Author: Nelson Stevens
 Maintainer: Nelson Stevens <nelson.stevens92@gmail.com>
