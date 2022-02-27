@@ -1,11 +1,72 @@
 #' measure all images in a directory
 #'
+#' @import purrr
+#' @import stringr
 #' @param path path to directory
 #'
-measure_directory <- function(path) {
+measure_directory <- function(
+  path = "C:/Users/Nelson/Desktop/test_dr/test_images",
+  write_images = TRUE,
+  eye_method = TRUE
+  ) {
   if (!is.character(path)) stop(sprintf("path must be character not: %s", typeof(path)))
   if (!dir.exists(path)) stop(sprintf("The directory: %s does not exist", path))
+  if (!is.logical(write_images)) stop(sprintf("write_images must be logical, not: %s", typeof(write_images)))
+  if (!is.logical(eye_method)) stop(sprintf("eye_method must be logical, not: %s", typeof(eye_method)))
 
-  # transform path for python
-  pth_py <- ospath(path)
+  # get files
+  fls <- list.files(path, pattern = "\\.(JPG|jpg|jpeg|JPEG|png|PNG)", full.names = TRUE, include.dirs = FALSE)
+
+
+
+  # create output paths if write_images
+  if (write_images) {
+    # make results directory
+    dir.create(paste0(path, "/results"), showWarnings = FALSE)
+    out_pths <- map(
+      fls,
+      function(x) {
+        splts <- str_split(x, "/", simplify = TRUE)
+        nme <- str_replace(splts[length(splts)], "\\..*", "_result.png")
+        newfname <- paste0(str_c(splts[1:length(splts) - 1], collapse = "/"), "/results/", nme)
+      }
+    )
+    out <- map2(
+      fls,
+      out_pths,
+      function(x, y) {
+        mul_measure(
+          path = x,
+          out_path = y,
+          eye_method = eye_method
+        )
+      }
+    )
+  } else {
+    out <- map(
+      fls,
+      function(x) {
+        mul_measure(
+          path = x,
+          eye_method = eye_method
+          )
+      }
+    )
+  }
+
+  return(out)
+}
+
+#' measure without plotting and exporting array
+#'
+#'
+#' @noRd
+mul_measure <- function(path, eye_method = TRUE, out_path = NULL) {
+  res <- measure_image(path, find_eye = eye_method, plot_image = FALSE)
+  if (!is.null(out_path)) {
+    # TOFIX: write image to out_path
+    pltimg(res$image, save = TRUE, path = out_path)
+  }
+  res <- res[names(res) != "image"]
+  return(res)
 }
