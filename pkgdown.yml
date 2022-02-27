@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 2.0.2
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-02-27T10:22Z
+last_built: 2022-02-27T12:35Z
 urls:
   reference: https://nelstevens.github.io/daphniaRuler/reference
   article: https://nelstevens.github.io/daphniaRuler/articles
