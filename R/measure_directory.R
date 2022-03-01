@@ -76,7 +76,6 @@ measure_directory <- function(
 mul_measure <- function(path, eye_method = TRUE, out_path = NULL) {
   res <- measure_image(path, find_eye = eye_method, plot_image = FALSE)
   if (!is.null(out_path)) {
-    # TOFIX: write image to out_path
     pltimg(res$image, save = TRUE, path = out_path)
   }
   res <- res[names(res) != "image"]
