@@ -2,6 +2,7 @@
 #'
 #' @import purrr
 #' @import stringr
+#' @importFrom tibblify tibblify
 #' @export
 #' @param path path to directory
 #' @param write_images write images to png? boolean
@@ -56,6 +57,11 @@ measure_directory <- function(
       }
     )
   }
+  # tibblify
+  tbl <- tibblify(out)
+  # write to csv
+  dname <- basename(path)
+  write.csv2(tbl, paste0(path, "/results/", dname, "_results.csv"))
 
   return(out)
 }
