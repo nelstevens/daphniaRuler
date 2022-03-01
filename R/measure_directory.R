@@ -12,7 +12,7 @@ measure_directory <- function(
   path = "C:/Users/Nelson/Desktop/test_dr/test_images",
   write_images = TRUE,
   eye_method = TRUE
-  ) {
+) {
   if (!is.character(path)) stop(sprintf("path must be character not: %s", typeof(path)))
   if (!dir.exists(path)) stop(sprintf("The directory: %s does not exist", path))
   if (!is.logical(write_images)) stop(sprintf("write_images must be logical, not: %s", typeof(write_images)))
@@ -22,11 +22,10 @@ measure_directory <- function(
   fls <- list.files(path, pattern = "\\.(JPG|jpg|jpeg|JPEG|png|PNG)", full.names = TRUE, include.dirs = FALSE)
 
 
-
+  # make results directory
+  dir.create(paste0(path, "/results"), showWarnings = FALSE)
   # create output paths if write_images
   if (write_images) {
-    # make results directory
-    dir.create(paste0(path, "/results"), showWarnings = FALSE)
     out_pths <- map(
       fls,
       function(x) {
@@ -39,10 +38,12 @@ measure_directory <- function(
       fls,
       out_pths,
       function(x, y) {
-        mul_measure(
-          path = x,
-          out_path = y,
-          eye_method = eye_method
+        suppressWarnings(
+          mul_measure(
+            path = x,
+            out_path = y,
+            eye_method = eye_method
+          )
         )
       }
     )
@@ -50,10 +51,12 @@ measure_directory <- function(
     out <- map(
       fls,
       function(x) {
-        mul_measure(
-          path = x,
-          eye_method = eye_method
+        suppressWarnings(
+          mul_measure(
+            path = x,
+            eye_method = eye_method
           )
+        )
       }
     )
   }
