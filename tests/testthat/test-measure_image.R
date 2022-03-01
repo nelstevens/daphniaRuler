@@ -1,5 +1,6 @@
 test_that("pltimage works", {
   vdiffr::expect_doppelganger("pltimg", pltimg(test_data$test_arra))
+  expect_error(pltimg(test_data$test_arra, save = T, path = "./smpl.png"), NA)
 })
 test_that("ospath works", {
   if (Sys.info()[["sysname"]] == "Windows") {
