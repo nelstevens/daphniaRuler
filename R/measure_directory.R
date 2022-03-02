@@ -3,6 +3,7 @@
 #' @import purrr
 #' @import stringr
 #' @importFrom tibblify tibblify
+#' @import progress
 #' @export
 #' @param path path to directory
 #' @param write_images write images to png? boolean
@@ -24,6 +25,12 @@ measure_directory <- function(
 
   # make results directory
   dir.create(paste0(path, "/results"), showWarnings = FALSE)
+  #initiate progressbar
+  pb <- progress::progress_bar$new(
+    total = length(fls),
+    format = "[:bar] :current/:total (:percent)"
+  )
+
   # create output paths if write_images
   if (write_images) {
     out_pths <- map(
@@ -38,6 +45,7 @@ measure_directory <- function(
       fls,
       out_pths,
       function(x, y) {
+        pb$tick()
         suppressWarnings(
           mul_measure(
             path = x,
@@ -51,6 +59,7 @@ measure_directory <- function(
     out <- map(
       fls,
       function(x) {
+        pb$tick()
         suppressWarnings(
           mul_measure(
             path = x,
