@@ -70,9 +70,9 @@
     
     
 <p>This article explains how to measure single images of daphnia to produce a list containing several measurements and plot these measurements onto the image.</p>
-<div class="section level2">
-<h2 id="load-the-package">1. Load the package<a class="anchor" aria-label="anchor" href="#load-the-package"></a>
-</h2>
+<div class="section level3">
+<h3 id="load-the-package">1. Load the package<a class="anchor" aria-label="anchor" href="#load-the-package"></a>
+</h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nelstevens.github.io/daphniaRuler">daphniaruler</a></span><span class="op">)</span>
 <span class="co">#&gt; Trying to find python...</span>
@@ -81,9 +81,9 @@
 <span class="co">#&gt; done... have fun</span></code></pre></div>
 <p>There should be no error messages when loading the package. In case you experience issues see: tbd.</p>
 </div>
-<div class="section level2">
-<h2 id="run-measure_image">2. run measure_image<a class="anchor" aria-label="anchor" href="#run-measure_image"></a>
-</h2>
+<div class="section level3">
+<h3 id="run-measure_image">2. run measure_image<a class="anchor" aria-label="anchor" href="#run-measure_image"></a>
+</h3>
 <p>Run the function measure_image. this function requires a single argument, which is the path to the image. This path can be either absolute or relative. The function also comes with two optional arguments:</p>
 <ul>
 <li>find_eye</li>
@@ -91,7 +91,7 @@
 </ul>
 <p>find_eye expects a logical value (either TRUE or FALSE). When TRUE the package will try to detect the eye of a daphnia within the image. If successful the will be measurement from the eye to the base of the tail and additionally a line from the base of the tail to the tip of the tail. This should be the most accurate way the measure body size in daphnia.<br>
 plot_image also expects a logical value (either TRUE or FALSE). When TRUE the function will autmatically create a plot of the image with the measurements overplotted. Note that this feature might only work when using rstudio.<br>
-Here’s an example what the function produces when having both optional arguments set to TRUE (I’m disabline the output of the image array due to space constrain):</p>
+Here’s an example what the function produces when having both optional arguments set to TRUE (I’m disabling the output of the image array due to space constrains):</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/measure_image.html">measure_image</a></span><span class="op">(</span>
   <span class="st">"../inst/sample_images/example1.JPG"</span>,
@@ -128,13 +128,12 @@ Here’s an example what the function produces when having both optional argumen
 <span class="co">#&gt; $tail.angle</span>
 <span class="co">#&gt; [1] 159.6364</span></code></pre></div>
 </div>
-<div class="section level2">
-<h2 id="what-should-the-image-look-like">what should the image look like<a class="anchor" aria-label="anchor" href="#what-should-the-image-look-like"></a>
-</h2>
+<div class="section level3">
+<h3 id="what-should-the-image-look-like">what should the image look like<a class="anchor" aria-label="anchor" href="#what-should-the-image-look-like"></a>
+</h3>
 <p>The image ideally only contains a single indidual. if other individuals are also present in the image only the largest individual will be measured. For optimal results try to make the image as sharp as possible. Especially the outline of the specimen should be clearly visible.</p>
 </div>
-  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
-    </nav></aside>
+  </main>
 </div>
 
 
