@@ -1,5 +1,5 @@
 
-# daphniaruler
+# daphniaruler <a href='https://nelstevens.github.io/daphniaRuler'><img src='man/figures/logo.svg' align="right" height="139" /></a>
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/nelstevens/daphniaRuler/workflows/R-CMD-check/badge.svg)](https://github.com/nelstevens/daphniaRuler/actions)
