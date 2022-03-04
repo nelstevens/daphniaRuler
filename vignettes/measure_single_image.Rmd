@@ -1,0 +1,24 @@
+---
+title: "Measure single images"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Measure single images}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+This article explains how to measure single images of daphnia to produce a list
+containing several measurements and plot these measurements onto the image.
+
+## 1. Load the package
+```{r setup}
+library(daphniaruler)
+```
+There should be no error messages when loading the package. In case you experience
+issues see: tbd.
