@@ -1,8 +1,9 @@
 pandoc: 2.7.3
 pkgdown: 2.0.2
 pkgdown_sha: ~
-articles: {}
-last_built: 2022-03-02T18:03Z
+articles:
+  measure_single_image: measure_single_image.html
+last_built: 2022-03-04T20:21Z
 urls:
   reference: https://nelstevens.github.io/daphniaRuler/reference
   article: https://nelstevens.github.io/daphniaRuler/articles
