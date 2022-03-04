@@ -43,7 +43,7 @@ Here's an example what the function produces when having both optional arguments
 set to TRUE (I'm disabline the output of the image array due to space constrain):  
 ```{r echo=TRUE, fig.width=5}
 out <- measure_image(
-  "C:/Users/Nelson/Desktop/R/daphniaRuler/inst/sample_images/example1.JPG",
+  "../inst/sample_images/example1.JPG",
   find_eye = TRUE,
   plot_image = TRUE
   )
