@@ -4,3 +4,5 @@
 .Ruserdata
 docs
 inst/sample_images/results
+tests/testthat/smpl.png
+inst/doc

@@ -1,0 +1,58 @@
+---
+title: "Measure single images"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Measure single images}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+This article explains how to measure single images of daphnia to produce a list
+containing several measurements and plot these measurements onto the image.
+
+### 1. Load the package
+```{r setup}
+library(daphniaruler)
+```
+There should be no error messages when loading the package. In case you experience
+issues see: tbd.
+
+### 2. run measure_image
+Run the function measure_image. this function requires a single argument, which
+is the path to the image. This path can be either absolute or relative.
+The function also comes with two optional arguments:  
+
+* find_eye
+* plot_image
+
+find_eye expects a logical value (either TRUE or FALSE). When TRUE the package
+will try to detect the eye of a daphnia within the image. If successful the will
+be measurement from the eye to the base of the tail and additionally a line from 
+the base of the tail to the tip of the tail. This should be the most accurate 
+way the measure body size in daphnia.  
+plot_image also expects a logical value (either TRUE or FALSE). When TRUE the
+function will autmatically create a plot of the image with the measurements 
+overplotted. Note that this feature might only work when using rstudio.  
+Here's an example what the function produces when having both optional arguments
+set to TRUE (I'm disabling the output of the image array due to space constrains):  
+```{r echo=TRUE, fig.width=5}
+out <- measure_image(
+  "../inst/sample_images/example1.JPG",
+  find_eye = TRUE,
+  plot_image = TRUE
+  )
+out[names(out) != "image"]
+```
+
+
+### what should the image look like
+The image ideally only contains a single indidual. if other individuals are also
+present in the image only the largest individual will be measured. For optimal 
+results try to make the image as sharp as possible. Especially the outline of
+the specimen should be clearly visible.
