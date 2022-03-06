@@ -48,6 +48,8 @@
 
     Code
       measure_directory(corrpath_dir, write_images = F, eye_method = T)
+    Warning <simpleWarning>
+      eye method failed for: C:\Users\Nelson\Desktop\R\daphniaRuler\inst\sample_images\example_head.JPG using head_method instead
     Output
       [[1]]
       [[1]]$ID
@@ -149,6 +151,8 @@
 
     Code
       measure_directory(corrpath_dir, write_images = T, eye_method = T)
+    Warning <simpleWarning>
+      eye method failed for: C:\Users\Nelson\Desktop\R\daphniaRuler\inst\sample_images\example_head.JPG using head_method instead
     Output
       [[1]]
       [[1]]$ID

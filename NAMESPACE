@@ -2,7 +2,7 @@
 
 export(measure_directory)
 export(measure_image)
-import(logger)
+import(futile.logger)
 import(progress)
 import(purrr)
 import(reticulate)

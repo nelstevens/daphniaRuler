@@ -4,7 +4,7 @@
 #' @import stringr
 #' @importFrom tibblify tibblify
 #' @import progress
-#' @import logger
+#' @import futile.logger
 #' @export
 #' @param path path to directory
 #' @param write_images write images to png? boolean
@@ -31,11 +31,8 @@ measure_directory <- function(
     total = length(fls),
     format = "[:bar] :current/:total (:percent)"
   )
-  # create logfile and log warnings and errors
-  t <- file(paste0(path, "/results/log.txt"))
-  log_appender(appender_file(t))
-  log_warnings()
-  log_errors()
+  # create logfile to log warnings and errors
+  flog.appender(appender.file(paste0(path, "/results/log.txt")))
 
   # create output paths if write_images
   if (write_images) {
@@ -52,10 +49,19 @@ measure_directory <- function(
       out_pths,
       function(x, y) {
         pb$tick()
-        mul_measure(
-          path = x,
-          out_path = y,
-          eye_method = eye_method
+        withCallingHandlers(
+          mul_measure(
+            path = x,
+            out_path = y,
+            eye_method = eye_method
+          ),
+          warning = function(msg) {
+            flog.warn(msg$message)
+          },
+          error = function(msg) {
+            warn(msg$message)
+            flog.warn(msg$message)
+          }
         )
       }
     )
@@ -64,9 +70,18 @@ measure_directory <- function(
       fls,
       function(x) {
         pb$tick()
-        mul_measure(
-          path = x,
-          eye_method = eye_method
+        withCallingHandlers(
+          mul_measure(
+            path = x,
+            eye_method = eye_method
+          ),
+          warning = function(msg) {
+            flog.warn(msg$message)
+          },
+          error = function(msg) {
+            warn(msg$message)
+            flog.warn(msg$message)
+          }
         )
       }
     )
@@ -76,7 +91,6 @@ measure_directory <- function(
   # write to csv
   dname <- basename(path)
   write.csv2(tbl, paste0(path, "/results/", dname, "_results.csv"))
-  close(t)
 
   return(out)
 }
