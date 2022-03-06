@@ -15,7 +15,7 @@ You can install the daphnia ruler via github using remotes:
 ``` r
 remotes::install_github("nelstevens/daphniaRuler")
 ```
-
+If you experience issues during installation see: https://nelstevens.github.io/daphniaRuler/articles/installation_issues.html
 ## Usage
 For detailed usage see: https://nelstevens.github.io/daphniaRuler/
 

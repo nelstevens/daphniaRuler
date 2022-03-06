@@ -1,0 +1,43 @@
+---
+title: "Installation issues"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Installation issues}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+### How to install
+```{r setup, eval=FALSE}
+remotes::install_github("nelstevens/daphniaRuler")
+```
+This command installs the package. Issues in the installation process can occur
+because the daphniaruler requires python and Anaconda (or miniconda) to be installed
+on your system.  
+
+### Solve installation issues
+While installing the package or when loading it you might encounter the following
+error:  
+Error: package or namespace load failed for ‘daphniaruler’:  
+ .onLoad failed in loadNamespace() for 'daphniaruler', details:  
+  call: NULL  
+  error: Unable to find conda binary. Is Anaconda installed?  
+
+This error occurs because Anaconda (or miniconda) and/or python is not installed on your system.
+This should fix it:
+```{r, eval=FALSE}
+install.packages("reticulate")
+reticulate::use_miniconda()
+```
+
+### Other issues
+If this page didn't help you in the installation process or you experience other
+issues using the daphniaruler please open an issue on [Github](https://github.com/nelstevens/daphniaRuler/issues). 
+Your contribution will be appreciated :)
