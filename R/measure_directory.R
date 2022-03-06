@@ -4,6 +4,7 @@
 #' @import stringr
 #' @importFrom tibblify tibblify
 #' @import progress
+#' @import logger
 #' @export
 #' @param path path to directory
 #' @param write_images write images to png? boolean
@@ -30,6 +31,11 @@ measure_directory <- function(
     total = length(fls),
     format = "[:bar] :current/:total (:percent)"
   )
+  # create logfile and log warnings and errors
+  t <- file(paste0(path, "/results/log.txt"))
+  log_appender(appender_file(t))
+  log_warnings()
+  log_errors()
 
   # create output paths if write_images
   if (write_images) {
@@ -46,12 +52,10 @@ measure_directory <- function(
       out_pths,
       function(x, y) {
         pb$tick()
-        suppressWarnings(
-          mul_measure(
-            path = x,
-            out_path = y,
-            eye_method = eye_method
-          )
+        mul_measure(
+          path = x,
+          out_path = y,
+          eye_method = eye_method
         )
       }
     )
@@ -60,11 +64,9 @@ measure_directory <- function(
       fls,
       function(x) {
         pb$tick()
-        suppressWarnings(
-          mul_measure(
-            path = x,
-            eye_method = eye_method
-          )
+        mul_measure(
+          path = x,
+          eye_method = eye_method
         )
       }
     )
@@ -74,6 +76,7 @@ measure_directory <- function(
   # write to csv
   dname <- basename(path)
   write.csv2(tbl, paste0(path, "/results/", dname, "_results.csv"))
+  close(t)
 
   return(out)
 }
@@ -84,6 +87,7 @@ measure_directory <- function(
 #' @noRd
 mul_measure <- function(path, eye_method = TRUE, out_path = NULL) {
   res <- measure_image(path, find_eye = eye_method, plot_image = FALSE)
+
   if (!is.null(out_path)) {
     pltimg(res$image, save = TRUE, path = out_path)
   }

@@ -2,6 +2,7 @@
 
 export(measure_directory)
 export(measure_image)
+import(logger)
 import(progress)
 import(purrr)
 import(reticulate)

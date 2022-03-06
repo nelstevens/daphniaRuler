@@ -40,11 +40,11 @@ measure_image <- function(
     res <- tryCatch({
     dr$measurement_methods$eye_method_2(path)},
     error = function(m) {
-      warning(sprintf("eye method failed with: %s \n using head_method instead", m))
+      warning(sprintf("eye method failed for: %s using head_method instead", path))
       res <- tryCatch(
         dr$measurement_methods$head_method(path),
         error = function(m) {
-          warning(sprintf("head_method also failed with: %s. skipping image", m))
+          warning(sprintf("head_method also failed for: %s. skipping image", path))
         }
       )
       return(res)
@@ -54,7 +54,7 @@ measure_image <- function(
     res <- tryCatch(
       dr$measurement_methods$head_method(path),
       error = function(m) {
-        warning(sprintf("head_method failed with: %s. skipping image", m))
+        warning(sprintf("head_method failed for: %s. skipping image", path))
       }
     )
     return(res)
