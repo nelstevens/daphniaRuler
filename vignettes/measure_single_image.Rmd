@@ -21,7 +21,8 @@ containing several measurements and plot these measurements onto the image.
 library(daphniaruler)
 ```
 There should be no error messages when loading the package. In case you experience
-issues see: tbd.
+issues see:  
+https://nelstevens.github.io/daphniaRuler/articles/installation_issues.html
 
 ### 2. run measure_image
 Run the function measure_image. this function requires a single argument, which
