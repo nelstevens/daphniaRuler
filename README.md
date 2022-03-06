@@ -25,7 +25,15 @@ For detailed usage see: https://nelstevens.github.io/daphniaRuler/
 library(daphniaruler)
 measure_image("path/to/image")
 ```
-The daphniaruler will output a list with all measured traits and plot measurements over the image.
+The daphniaruler will output a list with all measured traits and plot measurements over the image.  
+For details see: https://nelstevens.github.io/daphniaRuler/articles/measure_single_image.html
 ![](man/figures/example1_out.png)
 
-### Measure a directory: tbd
+### Measure a directory: 
+``` r
+library(daphniaruler)
+measure_directory("path/to/directory")
+```
+The daphniaruler will create a csv file containing all measured images within
+the directory. Optionally copies of the images with results overplotted can
+be saved to disk.
