@@ -12,7 +12,7 @@ test_that("measure_directory works", {
   expect_type(measure_directory(corrpath_dir, eye_method = FALSE, write_images = F), "list")
   # snapshot test
   expect_snapshot(measure_directory(corrpath_dir, write_images = F, eye_method = F), variant = Sys.info()[["sysname"]])
-  expect_snapshot(measure_directory(corrpath_dir, write_images = F, eye_method = T), variant = Sys.info()[["sysname"]])
+  expect_snapshot(suppressWarnings(measure_directory(corrpath_dir, write_images = F, eye_method = T)), variant = Sys.info()[["sysname"]])
   expect_snapshot(measure_directory(corrpath_dir, write_images = T, eye_method = F), variant = Sys.info()[["sysname"]])
-  expect_snapshot(measure_directory(corrpath_dir, write_images = T, eye_method = T), variant = Sys.info()[["sysname"]])
+  expect_snapshot(suppressWarnings(measure_directory(corrpath_dir, write_images = T, eye_method = T)), variant = Sys.info()[["sysname"]])
 })
