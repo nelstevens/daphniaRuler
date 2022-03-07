@@ -42,7 +42,7 @@ function will autmatically create a plot of the image with the measurements
 overplotted. Note that this feature might only work when using rstudio.  
 Here's an example what the function produces when having both optional arguments
 set to TRUE (I'm disabling the output of the image array due to space constraints):  
-```{r echo=TRUE, fig.width=5}
+```{r echo=TRUE, fig.width=6}
 out <- measure_image(
   "../inst/sample_images/example1.JPG",
   find_eye = TRUE,
