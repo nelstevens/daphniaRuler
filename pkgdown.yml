@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   installation_issues: installation_issues.html
   measure_single_image: measure_single_image.html
-last_built: 2022-03-07T19:48Z
+last_built: 2022-03-07T21:09Z
 urls:
   reference: https://nelstevens.github.io/daphniaRuler/reference
   article: https://nelstevens.github.io/daphniaRuler/articles
