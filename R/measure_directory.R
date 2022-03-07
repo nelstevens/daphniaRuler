@@ -49,20 +49,7 @@ measure_directory <- function(
       out_pths,
       function(x, y) {
         pb$tick()
-        withCallingHandlers(
-          mul_measure(
-            path = x,
-            out_path = y,
-            eye_method = eye_method
-          ),
-          warning = function(msg) {
-            flog.warn(msg$message)
-          },
-          error = function(msg) {
-            warn(msg$message)
-            flog.warn(msg$message)
-          }
-        )
+        han_measure(x, y, eye_method)
       }
     )
   } else {
@@ -70,19 +57,7 @@ measure_directory <- function(
       fls,
       function(x) {
         pb$tick()
-        withCallingHandlers(
-          mul_measure(
-            path = x,
-            eye_method = eye_method
-          ),
-          warning = function(msg) {
-            flog.warn(msg$message)
-          },
-          error = function(msg) {
-            warn(msg$message)
-            flog.warn(msg$message)
-          }
-        )
+        han_measure(path = x, eye_method = eye_method)
       }
     )
   }
@@ -94,6 +69,27 @@ measure_directory <- function(
 
   return(out)
 }
+
+#' measure with calling handler
+#'
+#' @noRd
+han_measure <- function(path, out_path = NULL, eye_method) {
+  withCallingHandlers(
+    mul_measure(
+      path = path,
+      out_path = out_path,
+      eye_method = eye_method
+    ),
+    warning = function(msg) {
+      flog.warn(msg$message)
+    },
+    error = function(msg) {
+      warn(msg$message)
+      flog.warn(msg$message)
+    }
+  )
+}
+
 
 #' measure without plotting and exporting array
 #'
