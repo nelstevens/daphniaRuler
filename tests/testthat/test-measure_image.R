@@ -16,6 +16,19 @@ test_that("ospath works", {
   }
 })
 
+test_that("scale_measurement works", {
+  res_in <- list(
+    perimeter = 1200,
+    area = 30000,
+    major = 402,
+    full.Length = 423,
+    tail.Length = 134,
+    eye.Length = 416
+  )
+  expect_snapshot(scale_measurement(res_in, scf = 101, eym = T))
+  expect_snapshot(scale_measurement(res_in, scf = 101, eym = F))
+})
+
 test_that("measure_image works", {
   # inexistent path leads to error
   expect_error(measure_image("/some/wrong/path"))
