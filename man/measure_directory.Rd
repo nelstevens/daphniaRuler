@@ -24,6 +24,6 @@ measure_directory(
 measure all images in a directory
 }
 \details{
-scaling_factor describes how mani pixels occur in one other unit.
+scaling_factor describes how many pixels occur in one other unit.
 For example if one mm corresponds to 100 pixels the scaling factor would be 100.
 }

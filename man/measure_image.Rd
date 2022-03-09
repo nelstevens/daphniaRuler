@@ -7,7 +7,8 @@
 measure_image(
   path = system.file("inst/sample_images/example1.JPG", package = "daphniaruler"),
   find_eye = TRUE,
-  plot_image = TRUE
+  plot_image = TRUE,
+  scaling_factor = NULL
 )
 }
 \arguments{
@@ -17,9 +18,15 @@ measure_image(
 if eye can't be found automatically falls back to only outline measurement. boolean}
 
 \item{plot_image}{whether or not to plot resulting image. boolean}
+
+\item{scaling_factor}{scale measurements to other unit. numeric. See Details for more info}
 }
 \description{
 Measure morphometric traits of a single image
+}
+\details{
+scaling_factor describes how many pixels occur in one other unit.
+For example if one mm corresponds to 100 pixels the scaling factor would be 100.
 }
 \examples{
 \dontrun{
