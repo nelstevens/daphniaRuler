@@ -52,7 +52,8 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">measure_image</span><span class="op">(</span>
   path <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"inst/sample_images/example1.JPG"</span>, package <span class="op">=</span> <span class="st">"daphniaruler"</span><span class="op">)</span>,
   find_eye <span class="op">=</span> <span class="cn">TRUE</span>,
-  plot_image <span class="op">=</span> <span class="cn">TRUE</span>
+  plot_image <span class="op">=</span> <span class="cn">TRUE</span>,
+  scaling_factor <span class="op">=</span> <span class="cn">NULL</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
@@ -65,7 +66,14 @@
 if eye can't be found automatically falls back to only outline measurement. boolean</p></dd>
 <dt>plot_image</dt>
 <dd><p>whether or not to plot resulting image. boolean</p></dd>
+<dt>scaling_factor</dt>
+<dd><p>scale measurements to other unit. numeric. See Details for more info</p></dd>
 </dl></div>
+    <div class="section level2">
+    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
+    <p>scaling_factor describes how many pixels occur in one other unit.
+For example if one mm corresponds to 100 pixels the scaling factor would be 100.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
