@@ -5,7 +5,11 @@
 #' @param find_eye try to find eye of daphnia?
 #'  if eye can't be found automatically falls back to only outline measurement. boolean
 #' @param plot_image whether or not to plot resulting image. boolean
+#' @param scaling_factor scale measurements to other unit. numeric. See Details for more info
 #'
+#' @details
+#' scaling_factor describes how many pixels occur in one other unit.
+#' For example if one mm corresponds to 100 pixels the scaling factor would be 100.
 #' @examples
 #' \dontrun{
 #' measure_image("path/to/image")
@@ -18,7 +22,8 @@ measure_image <- function(
     package = "daphniaruler"
     ),
   find_eye = TRUE,
-  plot_image = TRUE
+  plot_image = TRUE,
+  scaling_factor = NULL
 ) {
   # check if image file exists
   if (!file.exists(path)) stop(sprintf("file %s does not exist", path))
@@ -30,6 +35,7 @@ measure_image <- function(
   if (!is.logical(plot_image)) {
     stop(sprintf("plot_image musst be logical not %s", typeof(find_eye)))
   }
+  if (!(is.null(scaling_factor) | is.numeric(scaling_factor))) stop(sprintf("scaling_factor must be NULL or numeric, not: %s", typeof(scaling_factor)))
   # transform path if necessary
   path <- ospath(path)
   # import daphruler
@@ -57,11 +63,17 @@ measure_image <- function(
         warning(sprintf("head_method failed for: %s. skipping image", path))
       }
     )
-    return(res)
   }
 
   if (plot_image) {
     pltimg(res$image)
+  }
+  if (!is.null(scaling_factor)) {
+    res <- scale_measurement(
+      res,
+      scaling_factor,
+      find_eye
+    )
   }
 
 
@@ -108,4 +120,18 @@ ospath <- function(path) {
   } else {
     return(path)
   }
+}
+
+#' scale measurements
+#'
+#' @noRd
+scale_measurement <- function(res, scf, eym) {
+  res$perimeter <- res$perimeter / scf
+  res$area <- res$area / scf^2
+  res$major <- res$minor / scf
+  res$full.Length <- res$full.Length / scf
+  res$tail.Length <- res$tail.Length / scf
+  if (eym) res$eye.Length <- res$eye.Length / scf
+
+  return(res)
 }

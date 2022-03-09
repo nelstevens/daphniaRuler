@@ -25,6 +25,8 @@ test_that("measure_image works", {
   # plot image must be logical
   expect_error(measure_image(corrpath, plot_image = "no"))
   expect_error(measure_image(corrpath, plot_image = 2))
+  # scaling_factor must be numerig
+  expect_error(measure_image(corrpath, scaling_factor = "bogus"))
   # outputs a list
   expect_type(measure_image(corrpath), "list")
   expect_type(measure_image(corrpath, find_eye = FALSE), "list")

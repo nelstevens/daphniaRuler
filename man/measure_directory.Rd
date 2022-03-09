@@ -7,7 +7,8 @@
 measure_directory(
   path = "C:/Users/Nelson/Desktop/test_dr/test_images",
   write_images = TRUE,
-  eye_method = TRUE
+  eye_method = TRUE,
+  scaling_factor = NULL
 )
 }
 \arguments{
@@ -16,7 +17,13 @@ measure_directory(
 \item{write_images}{write images to png? boolean}
 
 \item{eye_method}{use eye method when possible? boolean}
+
+\item{scaling_factor}{scale measurements to other unit. numeric. See Details for more info}
 }
 \description{
 measure all images in a directory
+}
+\details{
+scaling_factor describes how mani pixels occur in one other unit.
+For example if one mm corresponds to 100 pixels the scaling factor would be 100.
 }

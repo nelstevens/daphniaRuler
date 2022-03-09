@@ -9,6 +9,11 @@
 #' @param path path to directory
 #' @param write_images write images to png? boolean
 #' @param eye_method use eye method when possible? boolean
+#' @param scaling_factor scale measurements to other unit. numeric. See Details for more info
+#'
+#' @details
+#' scaling_factor describes how many pixels occur in one other unit.
+#' For example if one mm corresponds to 100 pixels the scaling factor would be 100.
 #'
 measure_directory <- function(
   path = "C:/Users/Nelson/Desktop/test_dr/test_images",
@@ -51,7 +56,7 @@ measure_directory <- function(
       out_pths,
       function(x, y) {
         pb$tick()
-        han_measure(x, y, eye_method)
+        han_measure(x, y, eye_method, scaling_factor)
       }
     )
   } else {
@@ -59,7 +64,7 @@ measure_directory <- function(
       fls,
       function(x) {
         pb$tick()
-        han_measure(path = x, eye_method = eye_method)
+        han_measure(path = x, eye_method = eye_method, scf = scaling_factor)
       }
     )
   }
@@ -75,12 +80,13 @@ measure_directory <- function(
 #' measure with calling handler
 #'
 #' @noRd
-han_measure <- function(path, out_path = NULL, eye_method) {
+han_measure <- function(path, out_path = NULL, eye_method, scf) {
   withCallingHandlers(
     mul_measure(
       path = path,
       out_path = out_path,
-      eye_method = eye_method
+      eye_method = eye_method,
+      scf = scf
     ),
     warning = function(msg) {
       flog.warn(msg$message)
@@ -97,8 +103,8 @@ han_measure <- function(path, out_path = NULL, eye_method) {
 #'
 #'
 #' @noRd
-mul_measure <- function(path, eye_method = TRUE, out_path = NULL) {
-  res <- measure_image(path, find_eye = eye_method, plot_image = FALSE)
+mul_measure <- function(path, eye_method = TRUE, out_path = NULL, scf) {
+  res <- measure_image(path, find_eye = eye_method, plot_image = FALSE, scaling_factor = scf)
 
   if (!is.null(out_path)) {
     pltimg(res$image, save = TRUE, path = out_path)
@@ -106,3 +112,4 @@ mul_measure <- function(path, eye_method = TRUE, out_path = NULL) {
   res <- res[names(res) != "image"]
   return(res)
 }
+
