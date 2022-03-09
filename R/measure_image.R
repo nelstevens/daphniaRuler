@@ -130,7 +130,7 @@ scale_measurement <- function(res, scf, eym) {
   res$area <- res$area / scf^2
   res$major <- res$minor / scf
   res$full.Length <- res$full.Length / scf
-  res$tail.Length <- res$tail.Length / scf
+  if (eym) res$tail.Length <- res$tail.Length / scf
   if (eym) res$eye.Length <- res$eye.Length / scf
 
   return(res)
