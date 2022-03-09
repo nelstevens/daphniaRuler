@@ -13,6 +13,8 @@
 #' @examples
 #' \dontrun{
 #' measure_image("path/to/image")
+#' # scale images to other unit
+#' measure_image("path/to/image", scaling_factor = 134)
 #' }
 #' @export
 #'
@@ -128,7 +130,8 @@ ospath <- function(path) {
 scale_measurement <- function(res, scf, eym) {
   res$perimeter <- res$perimeter / scf
   res$area <- res$area / scf^2
-  res$major <- res$minor / scf
+  res$minor <- res$minor / scf
+  if (!eym) res$major <- res$major / scf
   res$full.Length <- res$full.Length / scf
   if (eym) res$tail.Length <- res$tail.Length / scf
   if (eym) res$eye.Length <- res$eye.Length / scf

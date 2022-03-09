@@ -10,7 +10,10 @@
       [1] 2.940888
       
       $major
-      numeric(0)
+      [1] 402
+      
+      $minor
+      [1] 2
       
       $full.Length
       [1] 4.188119
@@ -34,7 +37,10 @@
       [1] 2.940888
       
       $major
-      numeric(0)
+      [1] 3.980198
+      
+      $minor
+      [1] 2
       
       $full.Length
       [1] 4.188119

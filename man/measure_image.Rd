@@ -31,5 +31,7 @@ For example if one mm corresponds to 100 pixels the scaling factor would be 100.
 \examples{
 \dontrun{
 measure_image("path/to/image")
+# scale images to other unit
+measure_image("path/to/image", scaling_factor = 134)
 }
 }
