@@ -51,11 +51,15 @@ test_that("measure_image works", {
   # expect warning on fall back to head_method
   expect_warning(measure_image(corrpath_head))
 
-  # snapshot test
+  # snapshot tests
   expect_snapshot(measure_image(corrpath, plot_image = FALSE), variant = Sys.info()[["sysname"]])
   expect_snapshot(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE), variant = Sys.info()[["sysname"]])
-
   expect_snapshot(suppressWarnings(measure_image(corrpath_head, plot_image = FALSE)), variant = Sys.info()[["sysname"]])
   expect_snapshot(measure_image(corrpath_head, plot_image = FALSE, find_eye = FALSE), variant = Sys.info()[["sysname"]])
+
+  expect_snapshot(measure_image(corrpath, plot_image = FALSE, scaling_factor = 103), variant = Sys.info()[["sysname"]])
+  expect_snapshot(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE, scaling_factor = 103), variant = Sys.info()[["sysname"]])
+  expect_snapshot(suppressWarnings(measure_image(corrpath_head, plot_image = FALSE, scaling_factor = 103)), variant = Sys.info()[["sysname"]])
+  expect_snapshot(measure_image(corrpath_head, plot_image = FALSE, find_eye = FALSE, scaling_factor = 103), variant = Sys.info()[["sysname"]])
 
 })
