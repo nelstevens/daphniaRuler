@@ -12,8 +12,18 @@
 #' @param scaling_factor scale measurements to other unit. numeric. See Details for more info
 #'
 #' @details
+#' path must contain images in either png or jpg format. note that subdirectories will be ignored (not recursive).
 #' scaling_factor describes how many pixels occur in one other unit.
 #' For example if one mm corresponds to 100 pixels the scaling factor would be 100.
+#' You can calculate the scaling factor by taking images of a graticule and count how many
+#' pixels are in a unit of length with an image analysis tool such as imageJ.
+#'
+#' @examples
+#' \dontrun{
+#' measure_directory("path/to/directory")
+#' # scale images to other unit
+#' measure_directory("path/to/directory", scaling_factor = 134)
+#' }
 #'
 measure_directory <- function(
   path = "C:/Users/Nelson/Desktop/test_dr/test_images",

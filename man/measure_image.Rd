@@ -27,6 +27,8 @@ Measure morphometric traits of a single image
 \details{
 scaling_factor describes how many pixels occur in one other unit.
 For example if one mm corresponds to 100 pixels the scaling factor would be 100.
+You can calculate the scaling factor by taking images of a graticule ans see how many
+pixels are in a unit of length with an image analysis tool such as imageJ.
 }
 \examples{
 \dontrun{
