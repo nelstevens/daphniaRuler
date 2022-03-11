@@ -1,7 +1,7 @@
 #' Measure morphometric traits of a single image
 #'
 #' @import reticulate
-#' @param path path to image either absolute or relative
+#' @param path path to image either absolute or relative. string. See Details for more info.
 #' @param find_eye try to find eye of daphnia?
 #'  if eye can't be found automatically falls back to only outline measurement. boolean
 #' @param plot_image whether or not to plot resulting image. boolean

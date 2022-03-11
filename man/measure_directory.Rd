@@ -12,7 +12,7 @@ measure_directory(
 )
 }
 \arguments{
-\item{path}{path to directory}
+\item{path}{path to directory. string. See Details for more info.}
 
 \item{write_images}{write images to png? boolean}
 

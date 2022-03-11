@@ -6,7 +6,7 @@
 #' @import progress
 #' @import futile.logger
 #' @export
-#' @param path path to directory
+#' @param path path to directory. string. See Details for more info.
 #' @param write_images write images to png? boolean
 #' @param eye_method use eye method when possible? boolean
 #' @param scaling_factor scale measurements to other unit. numeric. See Details for more info

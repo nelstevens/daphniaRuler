@@ -12,7 +12,7 @@ measure_image(
 )
 }
 \arguments{
-\item{path}{path to image either absolute or relative}
+\item{path}{path to image either absolute or relative. string. See Details for more info.}
 
 \item{find_eye}{try to find eye of daphnia?
 if eye can't be found automatically falls back to only outline measurement. boolean}
