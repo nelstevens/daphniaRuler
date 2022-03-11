@@ -8,6 +8,7 @@
 #' @param scaling_factor scale measurements to other unit. numeric. See Details for more info
 #'
 #' @details
+#' Currently only png and jpg formats are allowed as input images.
 #' scaling_factor describes how many pixels occur in one other unit.
 #' For example if one mm corresponds to 100 pixels the scaling factor would be 100.
 #' You can calculate the scaling factor by taking images of a graticule ans see how many
