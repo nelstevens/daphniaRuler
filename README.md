@@ -35,5 +35,5 @@ library(daphniaruler)
 measure_directory("path/to/directory")
 ```
 The daphniaruler will create a csv file containing all measured images within
-the directory. Optionally copies of the images with results overplotted can
+the directory. Optionally copies of the images with results plotted over can
 be saved to disk.

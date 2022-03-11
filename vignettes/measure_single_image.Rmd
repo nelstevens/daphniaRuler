@@ -39,8 +39,8 @@ be measurement from the eye to the base of the tail and additionally a line from
 the base of the tail to the tip of the tail. This should be the most accurate 
 way the measure body size in daphnia.  
 plot_image also expects a logical value (either TRUE or FALSE). When TRUE the
-function will autmatically create a plot of the image with the measurements 
-overplotted. Note that this feature might only work when using rstudio.  
+function will create a plot of the image with the measurements 
+plotted over the image. Note that this feature might only work when using rstudio.  
 scaling_factor expect a numeric input. It describes how many pixels occur in one 
 unit of length. for example if 100 pixels correspond to 1mm then the scaling_factor would be 100.
 You can calculate the scaling factor with image analysis tools such as imageJ.
@@ -65,7 +65,7 @@ results try to make the image as sharp as possible. Especially the outline of
 the specimen should be clearly visible.
 
 ### Note on output images
-Output images with measurements overplotted will be rescaled to 720*480p in order
+Output images with measurements plotted over will be rescaled to 720*480p in order
 to save memory. However measurement outputs with scaling_factor = NULL will correspond
 to pixels in the original image. Thus measuring the drawn lines on output images with an image
 analysis tool such as imageJ will show differing results.
