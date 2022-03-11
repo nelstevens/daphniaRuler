@@ -60,7 +60,7 @@
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>path</dt>
-<dd><p>path to image either absolute or relative</p></dd>
+<dd><p>path to image either absolute or relative. string. See Details for more info.</p></dd>
 <dt>find_eye</dt>
 <dd><p>try to find eye of daphnia?
 if eye can't be found automatically falls back to only outline measurement. boolean</p></dd>
@@ -71,7 +71,8 @@ if eye can't be found automatically falls back to only outline measurement. bool
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>scaling_factor describes how many pixels occur in one other unit.
+    <p>Currently only png and jpg formats are allowed as input images.
+scaling_factor describes how many pixels occur in one other unit.
 For example if one mm corresponds to 100 pixels the scaling factor would be 100.
 You can calculate the scaling factor by taking images of a graticule ans see how many
 pixels are in a unit of length with an image analysis tool such as imageJ.</p>
