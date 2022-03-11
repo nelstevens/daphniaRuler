@@ -99,7 +99,7 @@
 <li>scaling_factor</li>
 </ul>
 <p>find_eye expects a logical value (either TRUE or FALSE). When TRUE the package will try to detect the eye of a daphnia within the image. If successful the will be measurement from the eye to the base of the tail and additionally a line from the base of the tail to the tip of the tail. This should be the most accurate way the measure body size in daphnia.<br>
-plot_image also expects a logical value (either TRUE or FALSE). When TRUE the function will autmatically create a plot of the image with the measurements overplotted. Note that this feature might only work when using rstudio.<br>
+plot_image also expects a logical value (either TRUE or FALSE). When TRUE the function will create a plot of the image with the measurements plotted over the image. Note that this feature might only work when using rstudio.<br>
 scaling_factor expect a numeric input. It describes how many pixels occur in one unit of length. for example if 100 pixels correspond to 1mm then the scaling_factor would be 100. You can calculate the scaling factor with image analysis tools such as imageJ. If scaling_factor is NULL all measurement outputs will correspond to pixels (no scaling performed). Here’s an example what the function produces when having all optional arguments set to default values (I’m disabling the output of the image array due to space constraints):</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">out</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/measure_image.html">measure_image</a></span><span class="op">(</span>
@@ -146,7 +146,7 @@ scaling_factor expect a numeric input. It describes how many pixels occur in one
 <div class="section level3">
 <h3 id="note-on-output-images">Note on output images<a class="anchor" aria-label="anchor" href="#note-on-output-images"></a>
 </h3>
-<p>Output images with measurements overplotted will be rescaled to 720*480p in order to save memory. However measurement outputs with scaling_factor = NULL will correspond to pixels in the original image. Thus measuring the drawn lines on output images with an image analysis tool such as imageJ will show differing results.</p>
+<p>Output images with measurements plotted over will be rescaled to 720*480p in order to save memory. However measurement outputs with scaling_factor = NULL will correspond to pixels in the original image. Thus measuring the drawn lines on output images with an image analysis tool such as imageJ will show differing results.</p>
 </div>
   </main>
 </div>
