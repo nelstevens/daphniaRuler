@@ -51,6 +51,9 @@ measure_directory <- function(
   # create logfile to log warnings and errors
   flog.appender(appender.file(paste0(path, "/results/log.txt")))
 
+  # if scaling factor not NULL write info.txt
+  if (!is.null(scaling_factor)) add_info(scaling_factor, path)
+
   # create output paths if write_images
   if (write_images) {
     out_pths <- map(
@@ -121,5 +124,18 @@ mul_measure <- function(path, eye_method = TRUE, out_path = NULL, scf) {
   }
   res <- res[names(res) != "image"]
   return(res)
+}
+
+#' add scaling info to info.txt
+#'
+#' @noRd
+add_info <- function(scf, path) {
+  filecon <- file(paste0(path, "/results/info.txt"))
+  writeLines(
+    sprintf("Scaling factor used: %s", scf),
+    filecon
+  )
+  close(filecon)
+
 }
 
