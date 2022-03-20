@@ -134,7 +134,6 @@ scale_measurement <- function(res, scf, eym) {
   res$perimeter <- res$perimeter / scf
   res$area <- res$area / scf^2
   res$minor <- res$minor / scf
-  if (!eym) res$major <- res$major / scf
   res$full.Length <- res$full.Length / scf
   if (eym) res$tail.Length <- res$tail.Length / scf
   if (eym) res$eye.Length <- res$eye.Length / scf

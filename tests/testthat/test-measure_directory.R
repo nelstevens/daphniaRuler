@@ -16,6 +16,10 @@ test_that("measure_directory works", {
   expect_snapshot(suppressWarnings(measure_directory(corrpath_dir, write_images = F, eye_method = T)), variant = Sys.info()[["sysname"]])
   expect_snapshot(measure_directory(corrpath_dir, write_images = T, eye_method = F), variant = Sys.info()[["sysname"]])
   expect_snapshot(suppressWarnings(measure_directory(corrpath_dir, write_images = T, eye_method = T)), variant = Sys.info()[["sysname"]])
+  expect_snapshot(measure_directory(corrpath_dir, write_images = F, eye_method = F, scaling_factor = 102), variant = Sys.info()[["sysname"]])
+  expect_snapshot(suppressWarnings(measure_directory(corrpath_dir, write_images = F, eye_method = T, scaling_factor = 102)), variant = Sys.info()[["sysname"]])
+  expect_snapshot(measure_directory(corrpath_dir, write_images = T, eye_method = F, scaling_factor = 102), variant = Sys.info()[["sysname"]])
+  expect_snapshot(suppressWarnings(measure_directory(corrpath_dir, write_images = T, eye_method = T, scaling_factor = 102)), variant = Sys.info()[["sysname"]])
 })
 
 test_that("add_info works", {

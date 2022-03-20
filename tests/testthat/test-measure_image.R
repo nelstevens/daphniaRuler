@@ -20,7 +20,6 @@ test_that("scale_measurement works", {
   res_in <- list(
     perimeter = 1200,
     area = 30000,
-    major = 402,
     minor = 202,
     full.Length = 423,
     tail.Length = 134,
