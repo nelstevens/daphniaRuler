@@ -2,13 +2,14 @@
   packageStartupMessage("Trying to find python and conda")
   # try finding and using installed python
   pyconf <- reticulate::py_discover_config()
-  if (!(pyconf$conda & pyconf$anaconda)) {
-    packageStartupMessage("installing miniconda...")
-    reticulate::install_miniconda()
-  }
   packageStartupMessage("Trying to find conda environment 'daphniaRuler'")
   # check if conda environment exists
-  exi <- reticulate::conda_list()
+  tryCatch(
+    {exi <- reticulate::conda_list()},
+    error = function(msg) {
+      stop("conda does not seem to be installed on this system. please run 'reticulate::install_miniconda()'")
+    }
+  )
   if (!pkgname %in% exi$name) {
     packageStartupMessage(sprintf("Creating conda environment '%s'", pkgname))
     # create virtual env
