@@ -17,7 +17,7 @@ Imports:
     reticulate,
     stringr,
     tibblify
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Suggests: 
     vdiffr,
     testthat (>= 3.0.0),
