@@ -1,10 +1,6 @@
 #' measure all images in a directory
 #'
-#' @import purrr
-#' @import stringr
-#' @importFrom tibblify tibblify
-#' @import progress
-#' @import futile.logger
+#' @import reticulate
 #' @export
 #' @param path path to directory. string. See Details for more info.
 #' @param write_images write images to png? boolean
