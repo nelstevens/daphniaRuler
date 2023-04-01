@@ -22,10 +22,7 @@
 #' @export
 #'
 measure_image <- function(
-  path = system.file(
-    "inst/sample_images/example1.JPG",
-    package = "daphniaruler"
-    ),
+  path,
   find_eye = TRUE,
   plot_image = TRUE,
   scaling_factor = NULL
