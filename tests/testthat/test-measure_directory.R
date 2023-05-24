@@ -6,4 +6,8 @@ test_that("measure_directory works", {
   expect_error(measure_directory(corrpath_dir, eye_method = "one"))
   expect_error(measure_directory(corrpath_dir, write_images = "one"))
   expect_error(measure_directory(corrpath_dir, scaling_factor = "bogus"))
+  expect_no_error(measure_directory(corrpath_dir))
+  expect_no_error(measure_directory(corrpath_dir, eye_method = FALSE))
+  expect_no_error(measure_directory(corrpath_dir, write_images = FALSE))
+  expect_no_error(measure_directory(corrpath_dir, scaling_factor = 89))
 })
