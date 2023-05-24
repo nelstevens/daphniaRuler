@@ -8,7 +8,7 @@ measure_directory(
   path,
   write_images = TRUE,
   eye_method = TRUE,
-  scaling_factor = NULL
+  scaling_factor = FALSE
 )
 }
 \arguments{
