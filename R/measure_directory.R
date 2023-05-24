@@ -25,13 +25,13 @@ measure_directory <- function(
   path,
   write_images = TRUE,
   eye_method = TRUE,
-  scaling_factor = NULL
+  scaling_factor = FALSE
 ) {
   if (!is.character(path)) stop(sprintf("path must be character not: %s", typeof(path)))
   if (!dir.exists(path)) stop(sprintf("The directory: %s does not exist", path))
   if (!is.logical(write_images)) stop(sprintf("write_images must be logical, not: %s", typeof(write_images)))
   if (!is.logical(eye_method)) stop(sprintf("eye_method must be logical, not: %s", typeof(eye_method)))
-  if (!(is.null(scaling_factor) | is.numeric(scaling_factor))) stop(sprintf("scaling_factor must be NULL or numeric, not: %s", typeof(scaling_factor)))
+  if (!is.logical(scaling_factor)) stop(sprintf("scaling_factor must be logical, not: %s", typeof(scaling_factor)))
 
   # import daphniaruler function
   dr <- reticulate::import("daphruler")
