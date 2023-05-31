@@ -5,10 +5,10 @@
 \title{measure all images in a directory}
 \usage{
 measure_directory(
-  path = "C:/Users/Nelson/Desktop/test_dr/test_images",
+  path,
   write_images = TRUE,
   eye_method = TRUE,
-  scaling_factor = NULL
+  scaling_factor = FALSE
 )
 }
 \arguments{

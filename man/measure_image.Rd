@@ -4,12 +4,7 @@
 \alias{measure_image}
 \title{Measure morphometric traits of a single image}
 \usage{
-measure_image(
-  path = system.file("inst/sample_images/example1.JPG", package = "daphniaruler"),
-  find_eye = TRUE,
-  plot_image = TRUE,
-  scaling_factor = NULL
-)
+measure_image(path, find_eye = TRUE, plot_image = TRUE, scaling_factor = NULL)
 }
 \arguments{
 \item{path}{path to image either absolute or relative. string. See Details for more info.}

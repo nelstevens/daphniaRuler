@@ -22,10 +22,7 @@
 #' @export
 #'
 measure_image <- function(
-  path = system.file(
-    "inst/sample_images/example1.JPG",
-    package = "daphniaruler"
-    ),
+  path,
   find_eye = TRUE,
   plot_image = TRUE,
   scaling_factor = NULL
@@ -46,14 +43,13 @@ measure_image <- function(
   # import daphruler
   dr <- reticulate::import("daphruler")
   # make measurement methods available
-  py_run_string("from daphruler import measurement_methods")
   if (find_eye) {
     res <- tryCatch({
-    dr$measurement_methods$eye_method_2(path)},
+    dr$eye_method_2(path)},
     error = function(m) {
       warning(sprintf("eye method failed for: %s using head_method instead", path))
       res <- tryCatch(
-        dr$measurement_methods$head_method(path),
+        dr$head_method(path),
         error = function(m) {
           warning(sprintf("head_method also failed for: %s. skipping image", path))
         }
@@ -63,7 +59,7 @@ measure_image <- function(
     )
   } else {
     res <- tryCatch(
-      dr$measurement_methods$head_method(path),
+      dr$head_method(path),
       error = function(m) {
         warning(sprintf("head_method failed for: %s. skipping image", path))
       }

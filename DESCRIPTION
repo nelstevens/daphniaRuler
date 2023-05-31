@@ -11,13 +11,9 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    futile.logger,
-    progress,
-    purrr,
     reticulate,
-    stringr,
-    tibblify
-RoxygenNote: 7.1.2
+    stringr
+RoxygenNote: 7.2.3
 Suggests: 
     vdiffr,
     testthat (>= 3.0.0),
