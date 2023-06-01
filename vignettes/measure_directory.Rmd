@@ -65,7 +65,7 @@ pixels that correspond to 1 cm. For example if 98 pixels make 1 cm, NUM
 should be replaced by 98. Note that if Scale.txt is missing in a
 directory measure_directory will fail if scaling_factor = TRUE.
 
-```{r echo=FALSE, fig.width=6}
+```{r echo=TRUE, fig.width=6}
 measure_directory(
   "../inst/sample_images",
   write_images = TRUE,
