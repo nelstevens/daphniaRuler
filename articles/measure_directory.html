@@ -126,6 +126,13 @@ The value specified in this file should correspond to the number of
 pixels that correspond to 1 cm. For example if 98 pixels make 1 cm, NUM
 should be replaced by 98. Note that if Scale.txt is missing in a
 directory measure_directory will fail if scaling_factor = TRUE.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/measure_directory.html">measure_directory</a></span><span class="op">(</span></span>
+<span>  <span class="st">"../inst/sample_images"</span>,</span>
+<span>  write_images <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  eye_method <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  scaling_factor <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="what-should-the-images-look-like">What should the images look like<a class="anchor" aria-label="anchor" href="#what-should-the-images-look-like"></a>
