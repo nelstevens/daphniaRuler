@@ -18,7 +18,7 @@ measure_directory(
 
 \item{eye_method}{use eye method when possible? boolean}
 
-\item{scaling_factor}{scale measurements to other unit. numeric. See Details for more info}
+\item{scaling_factor}{scale measurements to other unit. boolean. See Details for more info}
 }
 \description{
 measure all images in a directory
@@ -26,15 +26,13 @@ measure all images in a directory
 \details{
 path must contain images in either png or jpg format. note that subdirectories will be ignored (not recursive).
 scaling_factor describes how many pixels occur in one other unit.
-For example if one mm corresponds to 100 pixels the scaling factor would be 100.
-You can calculate the scaling factor by taking images of a graticule and count how many
-pixels are in a unit of length with an image analysis tool such as imageJ.
+editme!
 }
 \examples{
 \dontrun{
 measure_directory("path/to/directory")
 # scale images to other unit
-measure_directory("path/to/directory", scaling_factor = 134)
+measure_directory("path/to/directory", scaling_factor = FALSE)
 }
 
 }
