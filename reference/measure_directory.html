@@ -72,16 +72,14 @@
 
 
 <dt>scaling_factor</dt>
-<dd><p>scale measurements to other unit. numeric. See Details for more info</p></dd>
+<dd><p>scale measurements to other unit. boolean. See Details for more info</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p>path must contain images in either png or jpg format. note that subdirectories will be ignored (not recursive).
 scaling_factor describes how many pixels occur in one other unit.
-For example if one mm corresponds to 100 pixels the scaling factor would be 100.
-You can calculate the scaling factor by taking images of a graticule and count how many
-pixels are in a unit of length with an image analysis tool such as imageJ.</p>
+editme!</p>
     </div>
 
     <div class="section level2">
@@ -89,7 +87,7 @@ pixels are in a unit of length with an image analysis tool such as imageJ.</p>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="fu">measure_directory</span><span class="op">(</span><span class="st">"path/to/directory"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co"># scale images to other unit</span></span></span>
-<span class="r-in"><span><span class="fu">measure_directory</span><span class="op">(</span><span class="st">"path/to/directory"</span>, scaling_factor <span class="op">=</span> <span class="fl">134</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">measure_directory</span><span class="op">(</span><span class="st">"path/to/directory"</span>, scaling_factor <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
