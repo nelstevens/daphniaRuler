@@ -1,0 +1,91 @@
+---
+title: "measure all images in a directory"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{measure_directory}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This article explains how to measure whole directories or even several
+directories containing images of daphnia. Measured directories will
+receive a new subdirectory containing a csv file with all measurements
+specified in the argument and optionally a copy of each image with
+results plotted onto the image.
+
+### 1. load the package
+
+```{r setup}
+library(daphniaruler)
+```
+
+There should be no error messages when loading the package. In case you
+experience issues see:\
+<https://nelstevens.github.io/daphniaRuler/articles/installation_issues.html>
+
+### 2. run measure_directory
+
+Run the function measure_directory. This function requires one argument,
+which is the path to a directory containing images of daphnia or a path
+to a directory containing subdirectories with images of daphnia. The
+function also comes with three optional arguments:\
+
+-   write_images
+-   eye_method
+-   scaling_factor
+
+**write_images** expects a logical value. When TRUE each measured image
+will be copied to a subdirectory named results. All measured traits will
+be plotted onto those copies. This way one can easy check whether the
+measurements seem accurate.\
+
+**find_eye** expects a logical value. When TRUE the daphniaruler will
+try to detect the eye of the daphnia in each image. If successful there
+will be a measurement from the eye od the daphnia to the base of the
+tail and additionally a line from the base of the tail to the tip of the
+tail. This should be the most accurate way the measure body size in
+daphnia.
+
+**scaling_factor** expects a logical value. When TRUE the daphniaruler
+will search for a file titled Scale.txt in each directory containing
+images. A template for this file can be found at:
+<https://github.com/nelstevens/The-Daphnia-ruler/blob/master/Scale.txt>.
+The value specified in this file should correspond to the number of
+pixels that correspond to 1 cm. For example if 98 pixels make 1 cm, NUM
+should be replaced by 98. Note that if Scale.txt is missing in a
+directory measure_directory will fail if scaling_factor = TRUE.
+
+```{r echo=FALSE, fig.width=6}
+measure_directory(
+  "../inst/sample_images",
+  write_images = TRUE,
+  eye_method = TRUE,
+  scaling_factor = FALSE
+)
+```
+
+### What should the images look like
+
+The images ideally only contain a single individual. if other
+individuals are also present in an image only the largest individual
+will be measured. For optimal results try to make images as sharp as
+possible. Especially the outline of the specimen should be clearly
+visible.
+
+### Note on output images
+
+Output images with measurements plotted over will be rescaled to
+720\*480p in order to save memory. However measurement outputs with
+scaling_factor = NULL will correspond to pixels in the original image.
+Thus measuring the drawn lines on output images with an image analysis
+tool such as imageJ will show differing results.
