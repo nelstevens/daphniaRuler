@@ -1,39 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/404.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/articles/installation_issues.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/articles/measure_directory.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/articles/measure_single_image.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/reference/measure_directory.html</loc>
-  </url>
-  <url>
-    <loc>https://nelstevens.github.io/daphniaRuler/reference/measure_image.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://nelstevens.github.io/daphniaRuler/404.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/LICENSE-text.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/LICENSE.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/articles/index.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/articles/installation_issues.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/articles/measure_directory.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/articles/measure_single_image.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/authors.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/index.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/reference/index.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/reference/measure_directory.html</loc></url>
+<url><loc>https://nelstevens.github.io/daphniaRuler/reference/measure_image.html</loc></url>
 </urlset>
+
