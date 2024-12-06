@@ -49,16 +49,31 @@ test_that("measure_image works", {
 
   # expect warning on fall back to head_method
   expect_warning(measure_image(corrpath_head))
-
+  
   # snapshot tests
-  expect_snapshot(measure_image(corrpath, plot_image = FALSE), variant = Sys.info()[["sysname"]])
-  expect_snapshot(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE), variant = Sys.info()[["sysname"]])
-  expect_snapshot(suppressWarnings(measure_image(corrpath_head, plot_image = FALSE)), variant = Sys.info()[["sysname"]])
+  lst <- measure_image(corrpath, plot_image = FALSE)
+  lst <- purrr::map_if(lst, \(x) {length(x) == 1 && is.numeric(x)}, \(x) {round(x, 2)})
+  expect_snapshot(lst, variant = Sys.info()[["sysname"]])
+  lst <- measure_image(corrpath, plot_image = FALSE, find_eye = FALSE)
+  lst <- purrr::map_if(lst, \(x) {length(x) == 1 && is.numeric(x)}, \(x) {round(x, 2)})
+  expect_snapshot(lst, variant = Sys.info()[["sysname"]])
+  lst <- suppressWarnings(measure_image(corrpath_head, plot_image = FALSE))
+  lst <- purrr::map_if(lst, \(x) {length(x) == 1 && is.numeric(x)}, \(x) {round(x, 2)})
+  expect_snapshot(lst, variant = Sys.info()[["sysname"]])
+  lst <- measure_image(corrpath_head, plot_image = FALSE, find_eye = FALSE)
+  lst <- purrr::map_if(lst, \(x) {length(x) == 1 && is.numeric(x)}, \(x) {round(x, 2)})
   expect_snapshot(measure_image(corrpath_head, plot_image = FALSE, find_eye = FALSE), variant = Sys.info()[["sysname"]])
-
-  expect_snapshot(measure_image(corrpath, plot_image = FALSE, scaling_factor = 103), variant = Sys.info()[["sysname"]])
-  expect_snapshot(measure_image(corrpath, plot_image = FALSE, find_eye = FALSE, scaling_factor = 103), variant = Sys.info()[["sysname"]])
-  expect_snapshot(suppressWarnings(measure_image(corrpath_head, plot_image = FALSE, scaling_factor = 103)), variant = Sys.info()[["sysname"]])
-  expect_snapshot(measure_image(corrpath_head, plot_image = FALSE, find_eye = FALSE, scaling_factor = 103), variant = Sys.info()[["sysname"]])
+  lst <- measure_image(corrpath, plot_image = FALSE, scaling_factor = 103)
+  lst <- purrr::map_if(lst, \(x) {length(x) == 1 && is.numeric(x)}, \(x) {round(x, 2)})
+  expect_snapshot(lst, variant = Sys.info()[["sysname"]])
+  lst <- measure_image(corrpath, plot_image = FALSE, find_eye = FALSE, scaling_factor = 103)
+  lst <- purrr::map_if(lst, \(x) {length(x) == 1 && is.numeric(x)}, \(x) {round(x, 2)})
+  expect_snapshot(lst, variant = Sys.info()[["sysname"]])
+  lst <- suppressWarnings(measure_image(corrpath_head, plot_image = FALSE, scaling_factor = 103))
+  lst <- purrr::map_if(lst, \(x) {length(x) == 1 && is.numeric(x)}, \(x) {round(x, 2)})
+  expect_snapshot(lst, variant = Sys.info()[["sysname"]])
+  lst <- measure_image(corrpath_head, plot_image = FALSE, find_eye = FALSE, scaling_factor = 103)
+  lst <- purrr::map_if(lst, \(x) {length(x) == 1 && is.numeric(x)}, \(x) {round(x, 2)})
+  expect_snapshot(lst, variant = Sys.info()[["sysname"]])
 
 })

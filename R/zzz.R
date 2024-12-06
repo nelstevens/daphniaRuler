@@ -13,7 +13,7 @@
   if (!pkgname %in% exi$name) {
     packageStartupMessage(sprintf("Creating conda environment '%s'", pkgname))
     # create virtual env
-    reticulate::conda_create(envname = pkgname, python_version = "3.8.10")
+    reticulate::conda_create(envname = pkgname, python_version = "3.10")
     # upgrade pip
     packageStartupMessage("upgrading pip...")
     reticulate::conda_install(
@@ -27,7 +27,7 @@
     reticulate::conda_install(
       envname = pkgname,
       pip = TRUE,
-      packages = "daphruler==0.4.1",
+      packages = "daphruler==0.4.2",
       pip_options =
         "-i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/"
     )
