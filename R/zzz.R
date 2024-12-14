@@ -27,7 +27,7 @@
     reticulate::conda_install(
       envname = pkgname,
       pip = TRUE,
-      packages = "daphruler==0.4.2",
+      packages = "daphruler==0.4.3",
       pip_options =
         "-i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/"
     )
