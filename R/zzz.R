@@ -24,6 +24,7 @@
     )
 
     packageStartupMessage("installing daphniaruler...")
+    # install daphniaruler from test pypi
     reticulate::conda_install(
       envname = pkgname,
       pip = TRUE,
